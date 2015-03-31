@@ -214,4 +214,4 @@
 	});
 	logger.trace(name, "loaded");
 	
-})(ChromeDiigoSync);
+})(ChromeDiigoSync); 
