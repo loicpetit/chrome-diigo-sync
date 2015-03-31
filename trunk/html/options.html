@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Test Extension Options</title>
+  
+	<link rel="stylesheet" href="../css/keywords.css">
+	<link rel="stylesheet" href="../css/options.css">
+	
+</head>
+
+<body id="options">
+	<form>
+		<table>
+			<tr>
+				<td class="help"></td>
+				<td class="label">Login</td>
+				<td class="value">
+					<input type="text" id="login" placeholder="Type your login" />
+				</td>
+			</tr>
+			<tr>
+				<td class="help"></td>
+				<td class="label">Password</td>
+				<td class="value">
+					<input type="text" id="pwd" placeholder="Type your password" />
+				</td>
+			</tr>
+			<tr style="display:none">
+				<td class="help" title="Only bookmarks with at least one of its tags are synchronized, let empty to allow all"></td>
+				<td class="label">White list</td>
+				<td class="value keywords-container">
+					<input type="text" id="whitelist-input" placeholder="Type a tag" />
+					<ul id="whitelist-keywords" class="keywords"></ul>
+				</td>
+			</tr>
+			<tr style="display:none">
+				<td class="help" title="Bookmarks with at least one of its tags are ignored"></td>
+				<td class="label">Black list</td>
+				<td class="value keywords-container">
+					<input type="text" id="blacklist-input" placeholder="Type a tag" />
+					<ul id="blacklist-keywords" class="keywords"></ul>
+				</td>
+			</tr>
+			<tr>
+				<td class="help" title="Use bookmark folders as tags"></td>
+				<td class="label">Add tags</td>
+				<td class="value"><input type="checkbox" id="addtags" checked="checked" /></td>
+			</tr>
+			<tr>
+				<td class="help" title="Set Diigo bookmarks public"></td>
+				<td class="label">Set public</td>
+				<td class="value"><input type="checkbox" id="public" checked="checked" /></td>
+			</tr>
+			<tr>
+				<td class="help" title="Notify when a bookmark is added or updated"></td>
+				<td class="label">Notify on add/update</td>
+				<td class="value"><input type="checkbox" id="notify-add-update"/></td>
+			</tr>
+			<tr>
+				<td class="help" title="Notify when a bookmark is deleted"></td>
+				<td class="label">Notify on delete</td>
+				<td class="value"><input type="checkbox" id="notify-delete" checked="checked" /></td>
+			</tr>
+			<tr style="display:none">
+				<td class="help" title="When a bookmark is delete, delete the Diigo bookmark"></td>
+				<td class="label">Synchronize delete</td>
+				<td class="value"><input type="checkbox" id="syncdelete" /></td>
+			</tr>
+			<tr>
+				<td class="buttons" colspan="3">
+					<button type="button" id="restore">Restore defaults</button>
+					<button type="button" id="save">Save</button>
+				</td>
+			</tr>
+		</table>
+		
+	</form>
+	
+	<div id="info"></div>
+	<div id="error"></div>
+	
+	<script src="../js/lib/CryptoJS/aes.js"></script>
+	<script src="../js/lib/jquery.min.js"></script>
+	<script src="../js/init.js"></script>
+	<script src="../js/log.js"></script>
+	<script src="../js/keywords.js"></script>
+	<script src="../js/options.js"></script>
+	<script src="../js/optionspage.js"></script>
+</body>
+</html>

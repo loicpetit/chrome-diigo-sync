@@ -1,0 +1,46 @@
+{
+	//	Manifest documentation : https://developer.chrome.com/extensions/manifest
+	"manifest_version" : 2,
+
+	"name" : "Chrome Diigo Sync",
+	"description" : "This extension enable you to synchronize your bookmarks with your Diigo account",
+	"version" : "0.6",
+	
+	"permissions" : [
+		//	to enable storage of data
+		"storage",
+		//	enable notification
+		"notifications",
+		//	enable bookmark
+		"bookmarks",
+		//	enable diigo API
+		"https://secure.diigo.com/api/v2/*"
+	],
+	
+	//	add a background scripts, where our logic must be
+	//		libraries
+	//		init set up the namespace
+	//		log add log module
+	//		options to get the options set
+	//		bookmark to manage Chrome bookmarks
+	//		diigo to manage the diigo API
+	//		background manage the sync
+	"background" : {
+		"scripts" : [	"js/lib/jquery.min.js", 
+						"js/lib/CryptoJS/aes.js",
+						"js/init.js", 
+						"js/log.js", 
+						"js/options.js",
+						"js/bookmarks.js", 
+						"js/diigo.js",
+						"js/background.js"	],
+		"persistent" : false
+	},
+	
+	//	add an option page
+	"options_ui": {
+		"page": "html/options.html",
+		//	add default chrome style to be consistent with other extension options page
+		"chrome_style": true
+	}
+}

@@ -1,0 +1,60 @@
+
+/*
+	GENERAL
+*/
+body { 
+	margin: 10px; 
+}
+
+ul{
+	margin: 0;
+}
+
+input{
+	width: 100%;
+}
+
+/*
+	TABLE
+*/
+table {
+	width: 80%;
+	margin: auto;
+	table-layout: fixed;
+}
+table .help,
+table .label{
+	vertical-align: top;
+	padding-top: 0.4em;
+}
+table .help{
+	width: 1em;
+}
+table .label{
+	width: 5em;
+}
+.help { 
+	width: 1em; 
+	color: gray; 
+	font-style: italic; 
+}
+.help[title]:after { content: '?'; }
+.buttons{
+	text-align: right;
+}
+
+#options input:focus,
+#options button:focus{
+	border-color: orange;
+}
+
+/*
+	MESSAGES
+*/
+#info { 
+	color: cornflowerblue; 
+}
+
+#error { 
+	color: red; 
+}

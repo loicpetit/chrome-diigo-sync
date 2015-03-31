@@ -1,0 +1,34 @@
+.keywords{
+	padding: 0;
+}
+
+.keywords .keyword{
+	display: inline-block;
+	margin: 0.3em 0.6em 0.3em 0;
+	  padding-bottom: 0.2em;
+	border-radius: 0.5em;
+	background: #ffa73d;
+	background: linear-gradient(to bottom, #fceabb 0%,#ffa73d 50%,#ff7c00 51%,#fbdf93 100%);
+	color: white;
+	font-weight: bold;
+	text-shadow: 0 0 0.1em rgba(0, 0, 0, 1);
+	line-height: 2em;
+}
+
+.keywords .text{
+	margin-left: 0.5em;
+}
+
+.keywords .close:before {
+	content: "x";
+	padding: 0 0.5em;
+	color: #666666;
+	text-shadow: none;
+	cursor: pointer;
+	font-size: 1.3em;
+}
+
+.keywords .close:hover:before{
+	text-shadow: 0 0 0.3em rgba(255, 255, 255, 1);
+	color: red;
+}
