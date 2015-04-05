@@ -18,5 +18,5 @@ More over, some functionality can't be setup without delete bookmarks :
 These can't be setup because Chrome create bookmark when you click to add it and update it when you choose the good folder. If the default folder is valid, the bookmark will be create in the Diigo bookmarks, but if the bookmark is moved in a folder where the associated tags are not in the white list or contain a black list tag, the Diigo bookmark must be delete.
 
 # Group rules
-Add/Delete Diigo bookmarks in function of their tags. If a bookmark contain some tags, add it in a Diigo group, else remove it.
+Add/Delete Diigo bookmarks in a group in function of their tags. If a bookmark contain some tags, add it in a Diigo group, else remove it.
 The Diigo API doesn't have that functionnality.
