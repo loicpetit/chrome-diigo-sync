@@ -15,6 +15,7 @@
 	 *	Util
 	 */
 	namespace.Util = namespace.Util || {};
+	namespace.Util.name = "Util";
 	
 	//	test if a variable has a value
 	namespace.Util.isEmpty = function(value){
