@@ -17,39 +17,47 @@
 	 */
 	
 	//	Properties
-	module.Levels = {
+	module.Level = {
 		Trace : 0,
 		Debug : 1,
 		Info  : 2,
 		Warn  : 3,
 		Error : 4		
 	};
-	module.Level = namespace.Log.Levels.Debug;	
+	module.CurrentLevel = namespace.Log.Level.Debug;	
+
+	module.Style = {
+		Trace : "color: grey; padding: 0 10px;",
+		Debug : "color: black; padding: 0 10px;",
+		Info  : "color: blue; padding: 0 10px;",
+		Warn  : "color: orange; font-weight: bold; padding: 0 10px;",
+		Error : "color: red; font-weight: bold; padding: 0 10px;"		
+	};
 	
 	//	Methods
 	module.trace = function (moduleName, msg) {
-		if (module.Level <= module.Levels.Trace) {
-			log(moduleName, "TRACE", msg, traceStyle);
+		if (module.CurrentLevel <= module.Level.Trace) {
+			log(moduleName, "TRACE", msg, module.Style.Trace);
 		}
 	};
 	module.debug = function (moduleName, msg) {
-		if (module.Level <= module.Levels.Debug) {
-			log(moduleName, "DEBUG", msg, debugStyle);
+		if (module.CurrentLevel <= module.Level.Debug) {
+			log(moduleName, "DEBUG", msg, module.Style.Debug);
 		}
 	};
 	module.info = function (moduleName, msg) {
-		if (module.Level <= module.Levels.Info) {
-			log(moduleName, "INFO", msg, infoStyle);
+		if (module.CurrentLevel <= module.Level.Info) {
+			log(moduleName, "INFO", msg, module.Style.Info);
 		}
 	};
 	module.warn = function (moduleName, msg) {
-		if (module.Level <= module.Levels.Warn) {
-			log(moduleName, "WARN", msg, warnStyle);
+		if (module.CurrentLevel <= module.Level.Warn) {
+			log(moduleName, "WARN", msg, module.Style.Warn);
 		}
 	};
 	module.error = function (moduleName, msg) {
-		if (module.Level <= module.Levels.Error) {
-			log(moduleName, "ERROR", msg, errorStyle);
+		if (module.CurrentLevel <= module.Level.Error) {
+			log(moduleName, "ERROR", msg, module.Style.Error);
 		}
 	};
 	
@@ -61,22 +69,6 @@
 	var log = function (moduleName, level, msg, style) {
 		console.log("%c[" + namespace.name + "][" + moduleName + "][" + level + "] " + msg, style);
 	}
-
-	//	log levels
-	var levels = {
-		trace : 0,
-		debug : 1,
-		info  : 2,
-		warn  : 3,
-		error : 4
-	};
-
-	//	log styles
-	var traceStyle = "color: grey; padding: 0 10px;";
-	var debugStyle = "color: black; padding: 0 10px;";
-	var infoStyle  = "color: blue; padding: 0 10px;";
-	var warnStyle  = "color: orange; font-weight: bold; padding: 0 10px;";
-	var errorStyle = "color: red; font-weight: bold; padding: 0 10px;";
 	
 	module.trace(name, "loaded");
 	
